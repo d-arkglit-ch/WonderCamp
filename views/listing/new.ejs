@@ -1,0 +1,64 @@
+<% layout("/layout/boilerplate")%>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2 ">
+<form action="/listing" method="POST"  class = "needs-validation" novalidate enctype="multipart/form-data" >
+<h1>Create a new Listing</h1>  
+
+
+<div class="mb-3">
+   <label for="title" class="form-label ">Title</label>
+    <input type="text" placeholder="Enter title"  name="listing[title]" class="form-control" required><br>
+    <div class="invalid-feedback"> Please Enter Name</div>
+    <div class="valid-feedback"> Looks Good</div>
+</div>
+<div class="mb-3">
+   <label for="description" class="form-label">Description</label>
+   <input type="text" placeholder="Enter description"  name="listing[description]"  class="form-control" required><br>
+   <div class="invalid-feedback"> Please enter description</div>
+   <div class="valid-feedback"> looks good</div>
+
+</div>
+<div class="mb-3">
+    <label for="images" class="form-label ">Image URL</label>
+    <input type="file" name="listing[image]"  class="form-control" required><br>
+    <div class="invalid-feedback"> Please enter Image </div>
+    <div class="valid-feedback">Images Looks Awesome</div>
+
+</div>
+<div class="row">
+
+<div class="mb-3 col-md-3">
+   <label for="price" class="form-label ">Price</label>
+   <input type="number" placeholder="Enter price "  name="listing[price]"  ><br>
+   <!-- <div class="invalid-feedback">Please Enter Price</div>
+   <div class="valid-feedback"> Awesome</div> -->
+
+</div>
+<div class="mb-3 col-md-5">
+   <label for="country" class="form-label ">Country</label>
+   <input type="text" placeholder="Enter country"  name="listing[country]"  class="form-control" required><br>
+   <div class="invalid-feedback"> Please Enter Country Name</div>
+   <div class="valid-feedback"> Great Choice</div>
+
+</div>
+</div>
+<div class="mb-3">
+   <label for="location" class="form-label ">Location</label>
+   <input type="text" placeholder="Enter location"  name="listing[location]"  class="form-control" required> <br>
+   <div class="invalid-feedback">Please Enter Location</div>
+   <div class="valid-feedback">Location Looks Great </div>
+
+</div>
+
+    <button class="mb-3 btn btn-outline-success">Submit</button>
+</form>    
+    
+</div>
+    </div>
+</body>
+
+
+<!-- required is used to set validation , required word is used to check whetjer tje feild is filled or not and if not the form will not get submited -->
+<!-- you can aslo use bootstrap required which procide us  power to swrite custom msg if valid input is not provide-->
+ <!-- for bootstrap form validation you can  use nonvalidate which can remove the browser defaut validsation and theuse custom class called invalid-feedback which will custom msg idf you not have enter required feild -->

@@ -1,0 +1,51 @@
+<% layout("/layout/boilerplate")%>
+<body>
+  <h2>All Listing</h2>
+  <!-- <form action="/listing/new" method="GET">
+    <button>Create new Listing</button>
+  </form> -->
+  <div class="filters">
+     <div class="filter">
+<div class="icon"><i class="fa-solid fa-fire"></i></div>
+<p>Trending</p>
+     </div>
+     <div class="filter">
+<div class="icon"><i class="fa-solid fa-fire"></i></div>
+<p>Trending</p>
+     </div>
+     <div class="filter">
+<div class="icon"><i class="fa-solid fa-fire"></i></div>
+<p>Trending</p>
+     </div>
+     <div class="filter">
+<div class="icon"><i class="fa-solid fa-fire"></i></div>
+<p>Trending</p>
+     </div>
+     <div class="filter">
+<div class="icon"><i class="fa-solid fa-fire"></i></div>
+<p>Trending</p>
+     </div>
+  </div>
+  <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1 row-cols-1">
+   
+    <% for(let list of listings) {%>
+        <a href="/listing/<%=list._id%>">
+    <div class="card cardss col" >
+      <img src="<%=list.image.url%>" class="card-img-top" alt="listing-image" style="height:20rem" />
+      <div class="card-body">
+        <p class="card-text">
+         <b> <%=list.title%></b><br />
+         <% if (list.price != null) { %>
+          &#8377; <%= list.price.toLocaleString("en-IN") %>/night
+        <% } else { %>
+          <span class="text-muted">Price not available</span>
+        <% } %>
+        
+        </p>
+      </div>
+    </div>
+</a>
+
+    <%}%>
+  </div>
+</body>
